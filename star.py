@@ -1,10 +1,10 @@
 """ The state transform, action transform, terminal function and reward
-    function. The functions in this file are called from hub.py.
+    function. The functions in this file are called from sim.py.
 """
 
 import math
 from scipy.stats import norm
-
+yield
 my_norm = norm(0, 0.5)
 
 from bonsai_ai.logger import Logger
