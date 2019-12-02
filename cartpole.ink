@@ -7,7 +7,7 @@ type GameState {
     rotation: number
 }
 
-const left  = -1
+const left  =  0
 const right =  1
 
 type Action {
