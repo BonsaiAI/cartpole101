@@ -7,7 +7,7 @@ set -o nounset			# stop if an unassigned variable is used
 
 usage() {
 cat << EOF
-Scale
+scale [number_of_sims_to_run=16]
 EOF
 }
 
@@ -18,7 +18,7 @@ handler() {
 
 trap "handler" EXIT
 
-JOBS=${1:-4}
+JOBS=${1:-16}
 
 for i in $(seq 1 $JOBS); do
 	python sim.py &
