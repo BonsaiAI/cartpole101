@@ -4,8 +4,6 @@
 
 import math
 from scipy.stats import norm
-yield
-my_norm = norm(0, 0.5)
 
 from bonsai_ai.logger import Logger
 
@@ -51,15 +49,4 @@ def reward(model_state, done):
     """ Return greater values to reward the AI for correct behavior.
     """
     return 1
-
-    ##
-    ## Not used but leaving here for now
-    ##
-
-    # If the AI has not hit a terminal situation reward it with a score of 1.0
-    x, x_dot, theta, theta_dot = model_state
-    #bonus = my_norm.pdf(x)
-    penalty = x / 2
-
-    return 0 if done else 1 -penalty
 
