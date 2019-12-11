@@ -1,36 +1,24 @@
 inkling "2.0"
 
-type GameState {
+type State {
     position: number,
     velocity: number,
     angle:    number,
     rotation: number
 }
 
-const left  =  0
-const right =  1
-
 type Action {
-    command: number<left, right>
+    command: number<left=0, right=1>
 }
 
-type CartPoleConfig {
-    unused: number
+simulator the_simulator(action: Action): State {
 }
 
-simulator the_simulator(action: Action, config: CartPoleConfig): GameState {
-}
-
-graph (input: GameState): Action {
+graph (input: State): Action {
 
     concept balance(input): Action {
         curriculum {
             source the_simulator
-            lesson balancing {
-                constraint {
-                    unused: -1
-                }
-            }
         }
     }
     output balance
