@@ -56,10 +56,12 @@ class CartPole:
     def step(self, action):
         """ Move the state of the cartpole simulation forward one time unit
         """
+        assert(action == 1 or action == 0)
+
         total_mass      = self.masspole + self.masscart
         pole_masslength = self.masspole * self.length
 
-        force           = self.force_mag if action else -self.force_mag
+        force           = self.force_mag if action == 1 else -self.force_mag
         costheta        = math.cos(self.theta)
         sintheta        = math.sin(self.theta)
 
